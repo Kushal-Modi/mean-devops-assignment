@@ -1,0 +1,48 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-cred')
+    }
+
+    stages {
+
+        stage('Clone') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Kushal-Modi/mean-devops-assignment.git'
+            }
+        }
+
+        stage('Build Backend Image') {
+            steps {
+                sh 'docker build -t kushalmodi220105/backend:latest ./backend'
+            }
+        }
+
+        stage('Build Frontend Image') {
+            steps {
+                sh 'docker build -t kushalmodi220105/frontend:latest ./frontend'
+            }
+        }
+
+        stage('Push Images') {
+            steps {
+                sh '''
+                echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin
+                docker push kushalmodi220105/backend:latest
+                docker push kushalmodi220105/frontend:latest
+                '''
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh '''
+                docker-compose down
+                docker-compose pull
+                docker-compose up -d
+                '''
+            }
+        }
+    }
+}
