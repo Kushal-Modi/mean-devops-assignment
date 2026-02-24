@@ -7,12 +7,6 @@ pipeline {
 
     stages {
 
-        stage('Clone') {
-            steps {
-                git branch: 'main', url: 'https://github.com/Kushal-Modi/mean-devops-assignment.git'
-            }
-        }
-
         stage('Build Backend Image') {
             steps {
                 sh 'docker build -t kushalmodi220105/backend:latest ./backend'
@@ -39,7 +33,7 @@ pipeline {
             steps {
                 sshagent(['server-ssh-key']) {
                     sh '''
-                    ssh -o StrictHostKeyChecking=no ubuntu@13.201.50.175 << EOF
+                    ssh -o StrictHostKeyChecking=no ubuntu@YOUR_SERVER_IP << EOF
                         cd /home/ubuntu/mean-devops-assignment
                         docker-compose down
                         docker-compose pull
