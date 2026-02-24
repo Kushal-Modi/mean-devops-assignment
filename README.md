@@ -232,11 +232,10 @@ http://13.201.50.175/
 ---
 ## 📸 Project Screenshots
 
-![Application](Image/application.png)
+![Application](./images/application.png)
 
-![Application 2](Image/application2.png)
+![Application 2](./images/application2.png)
 
-![Jenkins Build](Image/jenkins_build.png)
+![Jenkins Build](./images/jenkins_build.png)
 
-![DockerHub](Image/dockerhub.png)
-```
+![DockerHub](./images/dockerhub.png)
