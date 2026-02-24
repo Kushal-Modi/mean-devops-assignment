@@ -34,10 +34,6 @@ GitHub → Jenkins → Docker Build → DockerHub → EC2 Server → Docker Comp
 
 ---
 
-# 📂 Project Structure
-
----
-
 # 🐳 Docker Configuration
 
 ## 📦 Backend Dockerfile
