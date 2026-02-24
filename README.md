@@ -114,7 +114,7 @@ volumes:
   mongo_data:
 
 
-  ##☁️ AWS Infrastructure Setup
+#☁️ AWS Infrastructure Setup
 
 EC2 Instance Details
 
@@ -131,7 +131,7 @@ Open Ports:
 8080 (Jenkins)
 
 
-##🐳 Jenkins Setup (Dockerized)
+#🐳 Jenkins Setup (Dockerized)
 
 Jenkins installed using:
 
@@ -222,15 +222,15 @@ docker-compose up -d
 http://13.201.50.175/
 
 
-## 📸 Project Screenshots
+# 📸 Project Screenshots
 
 <p align="center">
-  <img src="image/Screenshot%202026-02-24%20173440.png" width="700"/>
+  <img src="image/application.png" width="700"/>
   <br/>
-  <img src="image/Screenshot%202026-02-24%20173448.png" width="700"/>
+  <img src="image/application2.png" width="700"/>
   <br/>
-  <img src="image/Screenshot%202026-02-24%20174525.png" width="700"/>
+  <img src="image/jenkins_build.png" width="700"/>
   <br/>
-  <img src="image/Screenshot%202026-02-24%20175838.png" width="700"/>
+  <img src="image/dockerhub.png" width="700"/>
 </p>
 ```
