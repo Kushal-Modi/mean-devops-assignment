@@ -224,12 +224,7 @@ http://13.201.50.175/
 
 ## 📸 Project Screenshots
 
-<p align="center">
-  <img src="./Image/application.png" width="700" />
-  <br/><br/>
-  <img src="./Image/application2.png" width="700" />
-  <br/><br/>
-  <img src="./Image/jenkins_build.png" width="700" />
-  <br/><br/>
-  <img src="./Image/dockerhub.png" width="700" />
-</p>
+![Application](Image/application.png)
+![Application 2](Image/application2.png)
+![Jenkins Build](Image/jenkins_build.png)
+![DockerHub](Image/dockerhub.png)
