@@ -232,10 +232,12 @@ http://13.201.50.175/
 ---
 ## 📸 Project Screenshots
 
-![Application](image/application.png)
+<img width="1916" height="642" alt="dockerhub" src="https://github.com/user-attachments/assets/2a5a627b-95a8-44bb-ac10-f1d3860a7e90" />
 
-![Application 2](image/application2.png)
 
-![Jenkins Build](image/jenkins_build.png)
 
-![DockerHub](image/dockerhub.png)
+<img width="1914" height="546" alt="application" src="https://github.com/user-attachments/assets/5bf95c70-3ae7-4b91-9e62-1e0bf65963e2" />
+<img width="1904" height="715" alt="application2" src="https://github.com/user-attachments/assets/fec50fcf-8657-43ec-944c-da3407d49a0d" />
+
+
+<img width="1919" height="1023" alt="jenkins_build" src="https://github.com/user-attachments/assets/a279bf1a-8615-4777-b502-ed9afe09aa08" />
