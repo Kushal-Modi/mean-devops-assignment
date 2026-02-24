@@ -113,7 +113,7 @@ services:
 volumes:
   mongo_data:
 
-
+---
 #☁️ AWS Infrastructure Setup
 
 EC2 Instance Details
@@ -129,7 +129,7 @@ Open Ports:
 80 (HTTP)
 
 8080 (Jenkins)
-
+---
 
 #🐳 Jenkins Setup (Dockerized)
 
@@ -221,7 +221,7 @@ docker-compose up -d
 3️⃣ Access Application
 http://13.201.50.175/
 
-
+---
 ## 📸 Project Screenshots
 
 ![Application](Image/application.png)
@@ -231,3 +231,4 @@ http://13.201.50.175/
 ![Jenkins Build](Image/jenkins_build.png)
 
 ![DockerHub](Image/dockerhub.png)
+```
