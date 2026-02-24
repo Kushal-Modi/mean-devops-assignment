@@ -231,4 +231,3 @@ http://13.201.50.175/
 ![Jenkins Build](Image/jenkins_build.png)
 
 ![DockerHub](Image/dockerhub.png)
-
