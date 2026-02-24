@@ -225,12 +225,12 @@ http://13.201.50.175/
 # 📸 Project Screenshots
 
 <p align="center">
-  <img src="./image/application.png" width="700" />
+  ![Test](image/application.png)
   <br/><br/>
-  <img src="./image/application2.png" width="700" />
+  <img src="./Image/application2.png" width="700" />
   <br/><br/>
-  <img src="./image/jenkins_build.png" width="700" />
+  <img src="./Image/jenkins_build.png" width="700" />
   <br/><br/>
-  <img src="./image/dockerhub.png" width="700" />
+  <img src="./Image/dockerhub.png" width="700" />
 </p>
 ```
