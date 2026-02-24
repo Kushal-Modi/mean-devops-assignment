@@ -40,7 +40,7 @@ GitHub → Jenkins → Docker Build → DockerHub → EC2 Server → Docker Comp
 
 `backend/Dockerfile`
 
-```dockerfile
+````dockerfile
 FROM node:18
 
 WORKDIR /app
@@ -222,9 +222,14 @@ docker-compose up -d
 http://13.201.50.175/
 
 
+```markdown
 ## 📸 Project Screenshots
 
 ![Application](Image/application.png)
+
 ![Application 2](Image/application2.png)
+
 ![Jenkins Build](Image/jenkins_build.png)
+
 ![DockerHub](Image/dockerhub.png)
+````
