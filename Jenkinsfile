@@ -30,18 +30,18 @@ pipeline {
         }
 
         stage('Deploy to Server') {
-            steps {
-                sshagent(['server-ssh-key']) {
-                    sh '''
-                    ssh -o StrictHostKeyChecking=no ubuntu@YOUR_SERVER_IP << EOF
-                        cd /home/ubuntu/mean-devops-assignment
-                        docker-compose down
-                        docker-compose pull
-                        docker-compose up -d
-                    EOF
-                    '''
-                }
+    steps {
+        sshagent(['server-ssh-key']) {
+            sh '''
+            ssh -o StrictHostKeyChecking=no ubuntu@13.201.50.175 "
+                cd /home/ubuntu/mean-devops-assignment &&
+                docker-compose down &&
+                docker-compose pull &&
+                docker-compose up -d
+            "
+            '''
             }
-        }
+         }
+      }
     }
 }
