@@ -232,11 +232,11 @@ http://13.201.50.175/
 ---
 ## 📸 Project Screenshots
 
-<img width="1916" height="642" alt="dockerhub" src="https://github.com/Kushal-Modi/mean-devops-assignmen/image/application.png" />
+<img width="1916" height="642" alt="dockerhub" src="https://github.com/Kushal-Modi/mean-devops-assignment/image/application.png" />
 
 
 
-<img width="1914" height="546" alt="application" src="https://github.com/Kushal-Modi/mean-devops-assignmen/image/application2" />
-<img width="1904" height="715" alt="application2" src="https://github.com/Kushal-Modi/mean-devops-assignmen.image/dockerhub.png" />
+<img width="1914" height="546" alt="application" src="https://github.com/Kushal-Modi/mean-devops-assignment/image/application2" />
+<img width="1904" height="715" alt="application2" src="https://github.com/Kushal-Modi/mean-devops-assignment.image/dockerhub.png" />
 
-<img width="1919" height="1023" alt="jenkins_build" src="https://github.com/Kushal-Modi/mean-devops-assignmen/image/jenkins_build.png" />
+<img width="1919" height="1023" alt="jenkins_build" src="https://github.com/Kushal-Modi/mean-devops-assignment/image/jenkins_build.png" />
