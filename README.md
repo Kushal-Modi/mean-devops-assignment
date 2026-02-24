@@ -222,10 +222,10 @@ docker-compose up -d
 http://13.201.50.175/
 
 
-# 📸 Project Screenshots
+## 📸 Project Screenshots
 
 <p align="center">
-  ![Test](image/application.png)
+  <img src="./Image/application.png" width="700" />
   <br/><br/>
   <img src="./Image/application2.png" width="700" />
   <br/><br/>
@@ -233,4 +233,3 @@ http://13.201.50.175/
   <br/><br/>
   <img src="./Image/dockerhub.png" width="700" />
 </p>
-```
