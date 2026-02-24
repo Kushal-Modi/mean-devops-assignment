@@ -113,28 +113,36 @@ services:
 volumes:
   mongo_data:
 
----
-#☁️ AWS Infrastructure Setup
 
-EC2 Instance Details
+# ☁️ AWS Infrastructure Setup
 
-Instance Type: t3.micro (Free Tier eligible)
-
-OS: Ubuntu 22.04
-
-Open Ports:
-
-22 (SSH)
-
-80 (HTTP)
-
-8080 (Jenkins)
 ---
 
-#🐳 Jenkins Setup (Dockerized)
+## 🖥️ EC2 Instance Details
 
-Jenkins installed using:
+- **Instance Type:** t3.micro (Free Tier eligible)
+- **Operating System:** Ubuntu 22.04 LTS
 
+---
+
+## 🔐 Open Ports (Security Group)
+
+| Port | Purpose |
+|-----|--------|
+| 22 | SSH Access |
+| 80 | Application (HTTP) |
+| 8080 | Jenkins Dashboard |
+
+---
+# 🐳 Jenkins Setup (Dockerized)
+
+---
+
+## 🚀 Jenkins Installation (Using Docker)
+
+Jenkins is installed as a Docker container using the official LTS image.
+
+```bash
 docker run -d \
   --name jenkins \
   -u root \
