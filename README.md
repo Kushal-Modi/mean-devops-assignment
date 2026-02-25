@@ -1,44 +1,52 @@
+
+
 # 🚀 MEAN Stack DevOps CI/CD Deployment Project
 
 ## 📌 Project Overview
 
-This project demonstrates end-to-end containerization, CI/CD automation, and cloud deployment of a full-stack MEAN (MongoDB, Express, Angular, Node.js) application.
+This project demonstrates **end-to-end containerization, CI/CD automation, and cloud deployment** of a full-stack **MEAN (MongoDB, Express, Angular, Node.js)** application.
 
-The objective of this assignment was to:
+### 🎯 Objective
 
-- Containerize frontend and backend applications
-- Push Docker images to DockerHub
-- Deploy application on AWS EC2 (Ubuntu)
-- Configure Nginx reverse proxy
-- Implement Jenkins CI/CD pipeline
-- Enable automatic deployment on every GitHub push
+* ✅ Containerize frontend and backend applications
+* ✅ Push Docker images to DockerHub
+* ✅ Deploy application on AWS EC2 (Ubuntu)
+* ✅ Configure Nginx reverse proxy
+* ✅ Implement Jenkins CI/CD pipeline
+* ✅ Enable automatic deployment on every GitHub push
 
 ---
 
 # 🏗️ Architecture Flow
 
+```
 GitHub → Jenkins → Docker Build → DockerHub → EC2 Server → Docker Compose → Nginx → Browser
+```
 
 ---
 
 # 🛠️ Technologies Used
 
-- Frontend: Angular 15
-- Backend: Node.js + Express
-- Database: MongoDB
-- Containerization: Docker
-- Orchestration: Docker Compose
-- CI/CD: Jenkins
-- Cloud: AWS EC2 (Ubuntu 22.04 - t3.micro)
-- Reverse Proxy: Nginx
+| Layer            | Technology                        |
+| ---------------- | --------------------------------- |
+| Frontend         | Angular 15                        |
+| Backend          | Node.js + Express                 |
+| Database         | MongoDB                           |
+| Containerization | Docker                            |
+| Orchestration    | Docker Compose                    |
+| CI/CD            | Jenkins                           |
+| Cloud            | AWS EC2 (Ubuntu 22.04 - t3.micro) |
+| Reverse Proxy    | Nginx                             |
 
 ---
 
 # 🐳 Docker Configuration
 
+
+
 ## 📦 Backend Dockerfile
 
-`backend/Dockerfile`
+📂 `backend/Dockerfile`
 
 ```dockerfile
 FROM node:18
@@ -53,12 +61,15 @@ COPY . .
 EXPOSE 8080
 
 CMD ["node", "server.js"]
+```
 
 
-## 📦 frontend Dockerfile
 
-`frontend/Dockerfile`
+## 📦 Frontend Dockerfile
 
+📂 `frontend/Dockerfile`
+
+```dockerfile
 # Build Stage
 FROM node:18 AS build
 
@@ -79,9 +90,13 @@ COPY --from=build /app/dist/angular-15-crud /usr/share/nginx/html
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
+```
+
+---
 
 ## 📦 docker-compose.yml
 
+```yaml
 version: "3.8"
 
 services:
@@ -102,17 +117,19 @@ services:
       - mongo
 
   frontend:
-   build: ./frontend
-   container_name: frontend
-   restart: always
-   ports:
-    - "80:80"
-   depends_on:
-    - backend
+    build: ./frontend
+    container_name: frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
 
 volumes:
   mongo_data:
+```
 
+---
 
 # ☁️ AWS Infrastructure Setup
 
@@ -120,27 +137,25 @@ volumes:
 
 ## 🖥️ EC2 Instance Details
 
-- **Instance Type:** t3.micro (Free Tier eligible)
-- **Operating System:** Ubuntu 22.04 LTS
+* **Instance Type:** t3.micro (Free Tier eligible)
+* **Operating System:** Ubuntu 22.04 LTS
 
 ---
 
-## 🔐 Open Ports (Security Group)
+## 🔐 Security Group Configuration
 
-| Port | Purpose |
-|-----|--------|
-| 22 | SSH Access |
-| 80 | Application (HTTP) |
-| 8080 | Jenkins Dashboard |
+| Port | Purpose            |
+| ---- | ------------------ |
+| 22   | SSH Access         |
+| 80   | Application (HTTP) |
+| 8080 | Jenkins Dashboard  |
 
 ---
+
 # 🐳 Jenkins Setup (Dockerized)
 
----
 
-## 🚀 Jenkins Installation (Using Docker)
-
-Jenkins is installed as a Docker container using the official LTS image.
+## 🚀 Jenkins Installation (Docker)
 
 ```bash
 docker run -d \
@@ -152,17 +167,25 @@ docker run -d \
   -v /var/run/docker.sock:/var/run/docker.sock \
   --restart=always \
   jenkins/jenkins:lts
-🔐 Jenkins Credentials Configured
+```
 
-DockerHub Credentials
+---
 
-ID: dockerhub-cred
+## 🔐 Jenkins Credentials Configured
 
-EC2 SSH Key
+* **DockerHub Credentials**
 
-ID: server-ssh-key
+  * ID: `dockerhub-cred`
 
+* **EC2 SSH Key**
 
+  * ID: `server-ssh-key`
+
+---
+
+# ⚙️ Jenkins Pipeline Configuration
+
+```groovy
 pipeline {
     agent any
 
@@ -217,19 +240,70 @@ pipeline {
         }
     }
 }
-
-
-
-Step-by-Step Deployment Instructions
-1️⃣ Clone Repository on EC2
-git clone https://github.com/Kushal-Modi/mean-devops-assignment.git
-cd mean-devops-assignment
-2️⃣ Run Application Manually
-docker-compose up -d
-3️⃣ Access Application
-http://13.201.50.175/
+```
 
 ---
-## 📸 Project Screenshots
 
-![Dockerhub](https://i.ibb.co/SD13Kk1n/dockerhub.png)
+# 🚀 Step-by-Step Deployment Instructions
+
+---
+
+## 1️⃣ Clone Repository on EC2
+
+```bash
+git clone https://github.com/Kushal-Modi/mean-devops-assignment.git
+cd mean-devops-assignment
+```
+
+---
+
+## 2️⃣ Run Application
+
+```bash
+docker-compose up -d
+```
+
+---
+
+## 3️⃣ Access Application
+
+```
+http://13.201.50.175/
+```
+
+---
+
+# 📸 Project Screenshots
+
+### ✅ Rendered Output:
+![enter image description here](https://i.ibb.co/Mx2kxrGH/application.png)
+
+![enter image description here](https://i.ibb.co/Gv3Qt5CZ/application2.png)
+
+
+![jenkins-build](https://i.ibb.co/0yWzwh8f/jenkins-build.png)
+
+![DockerHub Images](https://i.ibb.co/SD13Kk1n/dockerhub.png)
+
+
+
+
+---
+
+# 🎉 Final Result
+
+✔ Fully Containerized MEAN Application
+✔ Automated CI/CD Pipeline
+✔ DockerHub Image Push
+✔ AWS EC2 Deployment
+✔ Nginx Reverse Proxy Setup
+✔ Automatic Deployment on Every GitHub Push
+
+---
+
+# 👨‍💻 Author
+
+**Kushal Modi**
+DevOps Engineer | Cloud Enthusiast
+
+
